@@ -1,15 +1,6 @@
 # Copyright (C) 2018 Garth N. Wells
 #
 # SPDX-License-Identifier: MIT
-"""This module provides a model for a monitoring station, and tools
-for manipulating/modifying station data
-
-"""
-
-
-from turtle import Turtle
-
-from sqlalchemy import false, true
 
 
 class MonitoringStation:
@@ -45,14 +36,14 @@ class MonitoringStation:
         return d
     
     def typical_range_consistent(self):
-        Flag=true
+        Flag=True
         if self.typical_range[0]>self.typical_range[1]:
             Flag=False
             return Flag
 
         if self.typical_range:
-           Flag=false
+           Flag=False
            return Flag
 
-
+def inconsistent_typical_range_stations(stations):
         
