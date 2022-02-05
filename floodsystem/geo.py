@@ -5,7 +5,6 @@
 geographical data.
 
 """
-import math
 
 from multiprocessing.sharedctypes import Value
 
@@ -18,7 +17,7 @@ def stations_within_radius(stations, centre, r):
     for i in range ( len(stations)):
         x=stations[i].coord[0]
         y=stations[i].coord[1]
-        distance=math.sqrt((centre[0]-x)**2+(centre[1]-y)**2)
+        distance=((centre[0]-x)**2+(centre[1]-y)**2)**0.5
         if distance<=r:
           Inrange[i]= stations[i]
 
