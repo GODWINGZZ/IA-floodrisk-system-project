@@ -1,4 +1,4 @@
 Newlist=[]
-temp=[]
-temp=stationdata.build_station_list()
+temp1=[]
+temp1=stationdata.build_station_list()
 Newlist=geo.stations_within_radius(temp,(52.2053, 0.1218),10)
