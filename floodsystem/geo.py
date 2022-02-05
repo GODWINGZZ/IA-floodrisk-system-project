@@ -18,7 +18,7 @@ def stations_within_radius(stations, centre, r):
         y=stations[i].coord[1]
         distance=((centre[0]-x)**2+(centre[1]-y)**2)**0.5
         if distance<=r:
-          Inrange[i]= stations[i]
+          Inrange.append(stations[i])
 
     return Inrange 
 
