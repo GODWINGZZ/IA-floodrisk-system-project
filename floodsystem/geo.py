@@ -6,6 +6,9 @@ geographical data.
 
 """
 
+from multiprocessing.sharedctypes import Value
+
+from more_itertools import value_chain
 from .utils import sorted_by_key  # noqa
 def stations_within_radius(stations, centre, r):
     """This function is used for returning a list of station within a certain radius"""
@@ -21,27 +24,25 @@ def stations_within_radius(stations, centre, r):
 
 
 
+
+
+
+    
 def rivers_by_station_number(stations, N):
-    Newlist=[]
-    RequiredList=[]
-    for i in range (len(stations)):
-        temp=stations.river
-        for j in range((len(Newlist))):
-            if temp:=Newlist[j][0]:
-                Newlist[j][1]+=1
-            if temp!=Newlist[j] and (j:=len(Newlist)):
-                Newlist[j][0]=temp
-                Newlist[j][1]=1
-    p = len(Newlist)
-    while p > 0:
-        for i in range(p - 1):
-            if Newlist[i][1] > Newlist[i + 1][1]:
-                Newlist[i + 1], Newlist[i] = Newlist[i], Newlist[i + 1]
-            
-        p = p - 1
-    for  k in range(N):
-        RequiredList[k]=Newlist[k]
-    return RequiredList
+    """
+    This function is used to determines the N rivers with the greatest number of monitoring stations
+    """
+
+    list = sorted_by_key([(key, len(value))for key, value in stations_by_river(stations).items()],1,reverse=True)
+    Newlist = list[:N]
+    for i in range(N, len(list)):
+        if list[i][1] < list[N - 1][1]:
+            break
+        else:
+            Newlist.append(list[i])
+
+    return Newlist
+
         
 
 

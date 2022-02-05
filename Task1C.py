@@ -1,5 +1,5 @@
-from .geo import stations_within_radius
-from .stationdata import build_station_list
+from floodsystem.geo import stations_within_radius
+from floodsystem.stationdata import build_station_list
 
 Newlist=[]
 temp1=build_station_list()
