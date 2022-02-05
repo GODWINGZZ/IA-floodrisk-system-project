@@ -1,5 +1,0 @@
-Newlist=[]
-temp1=[]
-temp1=stationdata.build_station_list()
-Newlist=geo.stations_within_radius(temp1,(52.2053, 0.1218),10)
-Print(Newlist)
