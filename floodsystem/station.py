@@ -3,6 +3,9 @@
 # SPDX-License-Identifier: MIT
 
 
+
+
+
 class MonitoringStation:
     """This class represents a river level monitoring station"""
 
@@ -46,4 +49,10 @@ class MonitoringStation:
            return Flag
 
 def inconsistent_typical_range_stations(stations):
-        
+        temp4=False
+        list=[]
+        for i in range((len(stations))):
+            temp4=stations[i].typical_range_consistent()
+            if temp4:=True:
+              list[i]=stations[i]
+        return list
