@@ -7,10 +7,9 @@ geographical data.
 """
 
 from multiprocessing.sharedctypes import Value
-
-from more_itertools import value_chain
-from numpy import square
 from .utils import sorted_by_key  # noqa
+
+
 def stations_within_radius(stations, centre, r):
     """This function is used for returning a list of station within a certain radius"""
     Inrange=[]
