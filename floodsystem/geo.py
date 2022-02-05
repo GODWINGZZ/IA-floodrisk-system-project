@@ -22,12 +22,34 @@ def stations_within_radius(stations, centre, r):
 
     return Inrange 
 
+def rivers_with_station(stations):
+    """
+    Function that returns a set of names of rivers that have an associated monitoring station.
+    """
+    List_of_rivers = set()
+    for s in stations:
+        List_of_rivers.add(s.river)
+    return List_of_rivers
+
+def stations_by_river(stations):
+    """
+    Groups stations by the river they are on.
+
+    Args:
+      stations: list of MonitoringStation objects
+    Returns:
+      A dictionary mapping river names (string) to a list of MonitoringStation objects
+    """
+    Set_of_stations = {}
+    for s in stations:
+        river = s.river
+        if river in Set_of_stations:
+            Set_of_stations[river].append(s)
+        else:
+            Set_of_stations[river] = [s]
+    return Set_of_stations
 
 
-
-
-
-    
 def rivers_by_station_number(stations, N):
     """
     This function is used to determines the N rivers with the greatest number of monitoring stations
