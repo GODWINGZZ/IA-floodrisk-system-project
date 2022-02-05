@@ -5,10 +5,12 @@
 geographical data.
 
 """
+import math
 
 from multiprocessing.sharedctypes import Value
 
 from more_itertools import value_chain
+from numpy import square
 from .utils import sorted_by_key  # noqa
 def stations_within_radius(stations, centre, r):
     """This function is used for returning a list of station within a certain radius"""
@@ -16,7 +18,7 @@ def stations_within_radius(stations, centre, r):
     for i in range ( len(stations)):
         x=stations[i].coord[0]
         y=stations[i].coord[1]
-        distance=((centre[0]-x)^2+(centre[1]-y)^2)^0.5
+        distance=math.sqrt((centre[0]-x)**2+(centre[1]-y)**2)
         if distance<=r:
           Inrange[i]= stations[i]
 
@@ -33,12 +35,7 @@ def rivers_with_station(stations):
 
 def stations_by_river(stations):
     """
-    Groups stations by the river they are on.
-
-    Args:
-      stations: list of MonitoringStation objects
-    Returns:
-      A dictionary mapping river names (string) to a list of MonitoringStation objects
+    Function that returns a dictionary mapping river names to a list of MonitoringStation objects
     """
     Set_of_stations = {}
     for s in stations:
