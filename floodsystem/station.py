@@ -7,6 +7,11 @@ for manipulating/modifying station data
 """
 
 
+from turtle import Turtle
+
+from sqlalchemy import false, true
+
+
 class MonitoringStation:
     """This class represents a river level monitoring station"""
 
@@ -38,3 +43,16 @@ class MonitoringStation:
         d += "   river:         {}\n".format(self.river)
         d += "   typical range: {}".format(self.typical_range)
         return d
+    
+    def typical_range_consistent(self):
+        Flag=true
+        if self.typical_range[0]>self.typical_range[1]:
+            Flag=False
+            return Flag
+
+        if self.typical_range:
+           Flag=false
+           return Flag
+
+
+        
