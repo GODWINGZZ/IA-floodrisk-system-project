@@ -40,9 +40,8 @@ class MonitoringStation:
     def typical_range_consistent(self):
         Flag=True
         temp=self.typical_range
-        temp1=temp[0]
-        temp2=temp[1]
-        if temp1>temp2:
+    
+        if temp[0]>temp[1]:
             Flag=False
             return Flag
 
