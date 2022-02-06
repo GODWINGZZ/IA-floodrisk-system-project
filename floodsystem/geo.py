@@ -24,8 +24,8 @@ def rivers_with_station(stations):
     """
     Function that returns a set of names of rivers that have an associated monitoring station.
     """
-    List_of_rivers = {}
-    for j in stations:
+    List_of_rivers =set()
+    for s in stations:
         List_of_rivers.add(s.river)
     return List_of_rivers
 
