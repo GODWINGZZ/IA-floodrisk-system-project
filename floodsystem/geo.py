@@ -5,8 +5,6 @@
 geographical data.
 
 """
-
-from multiprocessing.sharedctypes import Value
 from .utils import sorted_by_key  # noqa
 
 
