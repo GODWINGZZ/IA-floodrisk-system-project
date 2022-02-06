@@ -38,23 +38,17 @@ class MonitoringStation:
         return d
     
     def typical_range_consistent(self):
-        Flag=True
+        #Flag=True
+        #if self.typical_range[0]>self.typical_range[1]:
+            #Flag=False
+     return not(self.typical_range is None or self.typical_range[0]>self.typical_range[1])
 
-        temp=[]
-        temp.append(self.typical_range)
-        if temp[0]>temp[0]:
-            Flag=False
-            return Flag
-
-        if self.typical_range:
-           Flag=False
-           return Flag
 
 def inconsistent_typical_range_stations(stations):
-        temp4=False
-        list=[]
-        for i in range((len(stations))):
-            temp4=stations[i].typical_range_consistent()
-            if temp4:=True:
-              list.append(stations[i])
-        return list
+        #temp4=False
+        #list=[]
+        #for i in range((len(stations))):
+            ##temp4=stations[i].typical_range_consistent()
+            #if temp4:=True:
+              #list.append(stations[i])
+    return [n for n in stations if not n.typical_range_consistent()]
