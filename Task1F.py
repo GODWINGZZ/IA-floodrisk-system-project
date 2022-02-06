@@ -3,7 +3,8 @@ from floodsystem.station import inconsistent_typical_range_stations
 from floodsystem.stationdata import build_station_list
 
 def run():
- print(sorted(inconsistent_typical_range_stations(build_station_list())))
+    station=build_station_list()
+    print(inconsistent_typical_range_stations(station))
  
 
 if __name__ == "__main__":
