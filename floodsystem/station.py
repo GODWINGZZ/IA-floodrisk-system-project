@@ -53,5 +53,5 @@ def inconsistent_typical_range_stations(stations):
         for i in range((len(stations))):
             temp4=stations[i].typical_range_consistent()
             if temp4:=True:
-              list[i]=stations[i]
+              list.append(stations[i])
         return list
