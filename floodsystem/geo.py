@@ -6,7 +6,8 @@ geographical data.
 
 """
 from .utils import sorted_by_key  # noqa
-
+from haversine import haversine
+from .stationdata import build_station_list
 
 def stations_within_radius(stations, centre, r):
     """This function is used for returning a list of station within a certain radius"""
@@ -60,6 +61,14 @@ def rivers_by_station_number(stations, N):
 
     return Newlist
 
-        
+def stations_by_distance(stations, p):
+    tuplelist = []
+    stations = build_station_list()
+    for i in stations:
+        stationdistance = haversine(i.coord,p)
+        temp = (i.name,stationdistance)
+        tuplelist.append(temp)
+    sortedlist = sorted_by_key(tuplelist,1)
+    return sortedlist       
 
 
