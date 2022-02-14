@@ -3,6 +3,8 @@ from floodsystem.stationdata import build_station_list
 from floodsystem.geo import rivers_with_station
 from floodsystem.geo import rivers_by_station_number
 from floodsystem.geo import stations_by_river
+from floodsystem.geo import stations_by_distance
+from floodsystem.stationdata import build_station_list
 
 def test_stations_within_radius(): 
      stations=build_station_list()
