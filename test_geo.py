@@ -29,4 +29,9 @@ def test_stations_by_river(): #sam
      assert len(stations_by_river(temp2))>0  #the length of the returned list should be bigger than zero
      assert type(stations_by_river(temp2)) is dict # the returned type shpuld dictionary
 
-
+def test_stations_by_distance(): 
+     stations = build_station_list()
+     temp4 = stations_by_distance(stations,(52.2053, 0.1218)) 
+     temp5 = type(temp4[1])
+     assert temp5 == tuple                                       #test to check that stations_by_distance is returning tuples
+     assert temp4[0] < temp4[1]                                  #test to check list is sorted
