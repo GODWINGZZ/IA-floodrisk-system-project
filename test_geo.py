@@ -8,9 +8,9 @@ from floodsystem.stationdata import build_station_list
 
 def test_stations_within_radius(): 
      stations=build_station_list()
-     temp=stations_within_radius(stations,(52.2053, 0.1218),10) # use exmaple given in the docummnet
-     assert len(temp)>0 #the length of the returned list should be bigger than zero
-     assert len(temp)==11 # there should be exactly 11 stations in this range 
+     temp=stations_within_radius(stations,(52.2053, 0.1218),10)            # stations 10km from centre of cambridge
+     assert len(temp)>0                                                    #the length of the returned list should be greater than zero
+     assert len(temp)==11                                                  # there should be exactly 11 stations in this range 
 
 def test_rivers_with_station(): 
      ins=build_station_list()
@@ -34,4 +34,4 @@ def test_stations_by_distance():
      temp4 = stations_by_distance(stations,(52.2053, 0.1218)) 
      temp5 = type(temp4[1])
      assert temp5 == tuple                                       #test to check that stations_by_distance is returning tuples
-     assert temp4[0] < temp4[1]                                  #test to check list is sorted
+     assert temp4[0][1] < temp4[1][1]                                  #test to check list is sorted
