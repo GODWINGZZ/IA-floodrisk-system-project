@@ -9,19 +9,32 @@ from .utils import sorted_by_key  # noqa
 from haversine import haversine
 from .stationdata import build_station_list
 
-def stations_within_radius(stations, centre, r):
-    """This function is used for returning a list of station within a certain radius"""
-    Inrange=[]
-    for i in range ( len(stations)):
-        x=stations[i].coord[0]  #get the  x coordinate of the object
-        y=stations[i].coord[1]  #get the y cooedinate of the object
-        distance=((centre[0]-x)**2+(centre[1]-y)**2)**0.5 #calculate the distance between the given point and the centre 
-        if distance<r:
-          Inrange.append(stations[i].name) #add it into the list 
-        else:
-          break
+#def stations_within_radius(stations, centre, r):
+#    """This function is used for returning a list of station within a certain radius"""
+#    Inrange=[]
+#    for i in range ( len(stations)):
+#        x=stations[i].coord[0]  #get the  x coordinate of the object
+#        y=stations[i].coord[1]  #get the y cooedinate of the object
+#        distance=((centre[0]-x)**2+(centre[1]-y)**2)**0.5 #calculate the distance between the given point and the centre 
+#        if distance<r:
+#          Inrange.append(stations[i].name) #add it into the list 
+#        else:
+#          break
 
-    return Inrange 
+#   return Inrange 
+# N.B. commented out sam's broken code, morgan's attempt below
+
+def stations_within_radius(stations,centre,r):              #function to return list of stations within radius r of a centre
+    stations = build_station_list()                         #import list of stations
+    Inrange = []                                            #empty list
+    for i in stations:                                      #loop to create list of stations within radius
+        station_distance = haversine(i.coord,centre)
+        if station_distance < r:
+            entry = (i.name)
+            Inrange.append(entry) 
+    sortedInrange = sorted(Inrange)               
+    return sortedInrange    
+
 
 def rivers_with_station(stations):
     """
