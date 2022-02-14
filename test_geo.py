@@ -3,6 +3,8 @@ from floodsystem.stationdata import build_station_list
 from floodsystem.geo import rivers_with_station
 from floodsystem.geo import rivers_by_station_number
 from floodsystem.geo import stations_by_river
+from floodsystem.geo import stations_by_distance
+from floodsystem.stationdata import build_station_list
 
 def test_stations_within_radius():
      stations=build_station_list()
@@ -26,4 +28,10 @@ def test_stations_by_river():
      temp2=build_station_list()
      assert len(stations_by_river(temp2))>0
      assert type(stations_by_river(temp2)) is dict
+
+def test_stations_by_distance():
+     stations = build_station_list()
+     temp4 = stations_by_distance(stations,(52.2053, 0.1218)) 
+     temp5 = type(temp4[1])
+     assert temp5 == tuple 
 
