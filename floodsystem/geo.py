@@ -6,7 +6,6 @@ geographical data.
 
 """
 from .utils import sorted_by_key  # noqa
-from haversine import haversine
 from .stationdata import build_station_list
 
 #def stations_within_radius(stations, centre, r):
