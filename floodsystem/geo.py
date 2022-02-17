@@ -44,7 +44,7 @@ def rivers_with_station(stations): #sam
         List_of_rivers.add(s.river)                         #add suitable elements into the set 
     return List_of_rivers 
 
-def stations_by_river(stations): #sam
+def stations_by_river(stations,s): #sam
     """
     Function that returns a dictionary mapping river names to a list of MonitoringStation objects
     """
