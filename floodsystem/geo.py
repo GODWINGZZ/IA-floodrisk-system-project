@@ -7,6 +7,7 @@ geographical data.
 """
 from .utils import sorted_by_key  # noqa
 from .stationdata import build_station_list
+from haversine import haversine
 
 #def stations_within_radius(stations, centre, r):
 #    """This function is used for returning a list of station within a certain radius"""
@@ -44,7 +45,7 @@ def rivers_with_station(stations): #sam
         List_of_rivers.add(s.river)                         #add suitable elements into the set 
     return List_of_rivers 
 
-def stations_by_river(stations,s): #sam
+def stations_by_river(stations): #sam
     """
     Function that returns a dictionary mapping river names to a list of MonitoringStation objects
     """
