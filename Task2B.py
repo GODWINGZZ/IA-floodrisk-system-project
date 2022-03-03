@@ -6,9 +6,7 @@ def run():
  update_water_levels(stations)
  tuplelist=()
  for i in stations_level_over_threshold(stations,0.8):
-     Retuple=(i.name,i.latest_level)
-     tuplelist=tuplelist+Retuple
- print(tuplelist)
+    print(i)
      
 if __name__ == "__main__":
     print("*** Task 2B: CUED Part IA Flood Warning System ***")
