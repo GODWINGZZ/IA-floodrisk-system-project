@@ -2,10 +2,6 @@
 #
 # SPDX-License-Identifier: MIT
 
-
-
-
-from sympy import fraction
 from floodsystem.stationdata import update_water_levels
 
 
