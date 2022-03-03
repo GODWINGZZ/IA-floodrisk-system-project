@@ -2,8 +2,6 @@
 #
 # SPDX-License-Identifier: MIT
 
-from floodsystem.stationdata import update_water_levels
-
 
 class MonitoringStation:
     """This class represents a river level monitoring station"""
@@ -45,8 +43,7 @@ class MonitoringStation:
 
 
     def relative_water_level(self):
-        update_water_levels(self)
-        if (MonitoringStation.typical_range_consistent(self) and (update_water_levels(self)!=(None))):
+        if (MonitoringStation.typical_range_consistent(self) and (self.latest_level != None)):
            fraction=self.latest_level/self.typical_range
         return fraction
 
