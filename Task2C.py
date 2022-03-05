@@ -5,7 +5,11 @@ from floodsystem.stationdata import update_water_levels
 def run():
  stations=build_station_list()
  update_water_levels(stations)
- print(stations_highest_rel_level(stations,10))
+ list=[]
+ for i in stations_highest_rel_level(stations,10):
+     temp1=(i[0].name,i[1])
+     list.append(temp1)
+ print(list)
  
 
 if __name__ == "__main__":
