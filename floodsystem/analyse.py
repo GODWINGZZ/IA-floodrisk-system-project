@@ -4,5 +4,6 @@ import numpy as np
 
 def polyfit(dates, levels, p):
     x = matplotlib.dates.date2num(dates)
-    poly,d0 = np.polyfit(x, levels, p)
-    return poly,d0
+    p_coeff = np.polyfit(x-x[0], levels, p)
+    poly=np.poly1d(p_coeff)
+    return poly
