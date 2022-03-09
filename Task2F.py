@@ -9,7 +9,12 @@ def run():
     temp1=stations_highest_rel_level(stations,5)
     for station in temp1:
        dt=5
-       dates, levels = fetch_measure_levels(station.measure_id,
+       dates, levels = fetch_measure_levels(station.station_id,
                                      dt=datetime.timedelta(days=dt))
        plot_water_level_with_fit(station,dates,levels,4)
+
+
+if __name__ == "__main__":
+    print("*** Task 2F: CUED Part IA Flood Warning System ***")
+    run() 
 
