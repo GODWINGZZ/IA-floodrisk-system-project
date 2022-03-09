@@ -1,4 +1,4 @@
-from floodsystem.analyse import polyfit
+from .analyse import polyfit
 import matplotlib.pyplot as plt
 import numpy as np
 def plot_water_level_with_fit(station, dates, levels, p):
