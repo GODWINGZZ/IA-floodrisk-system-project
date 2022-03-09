@@ -2,13 +2,19 @@ import matplotlib
 from .analyse import polyfit
 import matplotlib.pyplot as plt
 import numpy as np
+import math
 def plot_water_level_with_fit(station,dates,levels,p):
-    plt.plot(dates, levels, '.')
-    polyfit(dates,levels,p)
-    x=matplotlib.dates.date2num(dates)
-    x1=np.linspace(x[0],x[-1],30)
-    plt.plot(x1,polyfit(dates,levels,p))
-    plt.axhline(y=15)
-    plt.axhline(y=1)
-    plt.show
-    
+    plt.rc("lines",marker=".",linestyle="None")
+    #plot_water_levels_no_show(station,dates,levels)
+    matplotlib.pyplot.rcdefaults()
+    poly,shift=polyfit(dates,levels,p)
+    k=matplotlib.dates.date2num(dates-shift)
+    #num=43
+    ##interval=math.ceil((len(dates)-1)/num)
+    #dates_reduced=systematic_sample(dates[:-1],interval)
+    #dates_reduced.append(dates[-1])
+    #x1=np.array(
+        ###list(map(lambda d:matplotlib.dates.date2num(d-shift),dates_reduced)))
+        
+    plt.plot(k,poly(k),label=f"Best fit, degree {p}",color="red")
+    plt.legend
