@@ -23,13 +23,13 @@ def plot_water_level_with_fit(station,dates,levels,p):
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta, date
 from .stationdata import build_station_list
-from datafetcher import fetch_measure_levels
+from .datafetcher import fetch_measure_levels
 
 stations = build_station_list
 
 def plot_water_levels(station, dates, levels):
     
-    plt.plot(t,level)
+    plt.plot(dates,levels)
     
     plt.xlabel('date')
     plt.ylabel('water level/m')
