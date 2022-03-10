@@ -12,7 +12,7 @@ def plot_water_level_with_fit(station,dates,levels,p):
       g.append(matplotlib.dates.date2num(dates[i]-shift))
 
     plt.plot(g,levels, label='Original data',color="green")
-    plt.plot(k,poly(k), label='Best fit of degree {p}',color="red")
+    plt.plot(k,poly(k), label=f"Best fit of degree {p}",color="red")
     plt.title(station[0].name)
     plt.xlabel('Time')
     plt.ylabel('Water level/m')
