@@ -13,8 +13,8 @@ def plot_water_level_with_fit(station,dates,levels,p):
 
     plt.plot(dates,levels, label='Original data',color="green")
     plt.plot(dates,poly(k), label=f"Best fit of degree {p}",color="red")
-    plt.title(station[0].name+f"(time shift={shift})")
-    plt.xlabel('Time')
+    plt.title(station[0].name,fontsize=8)
+    plt.xlabel('Time',fontsize=1)
     plt.ylabel('Water level/m')
     plt.xticks(rotation=67.5)
     plt.legend()
