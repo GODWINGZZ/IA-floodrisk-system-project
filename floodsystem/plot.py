@@ -17,8 +17,8 @@ def plot_water_level_with_fit(station,dates,levels,p):
     plt.ylabel('Water level/m')
     plt.xlabel('Time')
     plt.xticks(rotation=60)
-    plt.axhline(y=stations[0].typical_range[0],color="blue",linestyle='dashed')
-    plt.axhline(y=stations[0].typical_range[1],color="black",linestyle='dashed')
+    plt.axhline(y=station[0].typical_range[0])#color="blue",linestyle='dashed')
+    plt.axhline(y=station[0].typical_range[1])#color="black",linestyle='dashed')
     plt.legend()
     plt.show()
 
