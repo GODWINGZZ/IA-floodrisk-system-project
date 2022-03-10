@@ -22,7 +22,7 @@ def run():
         if i.name in namelist:
             
             dt = 10
-            dates, levels = fetch_measure_levels(station.measure_id, dt=timedelta(days=dt))
+            dates, levels = fetch_measure_levels(i.measure_id, dt=timedelta(days=dt))
 
             for date, level in zip(dates, levels):
                 print(date, level)
