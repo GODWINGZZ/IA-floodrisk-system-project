@@ -11,7 +11,7 @@ def plot_water_level_with_fit(station,dates,levels,p):
     g=[]
     for i in range(len(dates)):
       k.append(matplotlib.dates.date2num(dates[i]-shift))
-      g.append(matplotlib.dates.date2num(dates[i]))
+      g.append(matplotlib.dates.date2num(dates[i]-shift))
 
     plt.plot(g,levels,label="Original data",color="green")
         
