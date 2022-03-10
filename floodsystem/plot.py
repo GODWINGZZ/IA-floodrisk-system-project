@@ -5,7 +5,7 @@ import numpy as np
 import math
 def plot_water_level_with_fit(station,dates,levels,p):
     poly,shift=polyfit(dates,levels,p)
-    plt.rc("lines",marker=".", Linestyle="None")
+    plt.rc("lines",marker=".", linestyle="None")
     matplotlib.pyplot.rcdefaults()
     k=[]
     g=[]
