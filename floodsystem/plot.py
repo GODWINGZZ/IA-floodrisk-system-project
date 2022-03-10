@@ -4,16 +4,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 def plot_water_level_with_fit(station,dates,levels,p):
-    plt.rc("lines",marker=".",linestyle="None")
-    #plot_water_levels_no_show(station,dates,levels)
-    matplotlib.pyplot.rcdefaults()
     poly,shift=polyfit(dates,levels,p)
     k=[]
+    g=[]
     for i in range(len(dates)):
       k.append(matplotlib.dates.date2num(dates[i]-shift))
-    
+      g.append(matplotlib.dates.date2num(dates[i]))
+
+    plt.plot(g,levels,label="Original data",color="green")
         
-    plt.plot(k,poly(k),label=f"Best fit, degree {p}",color="red")
+    plt.plot(k,poly(k),label="Best fit, degree {p}",color="red")
+    plt.title(station[0].name)
+    plt.xlabel('Time')
+    plt.ylabel('Water level')
     plt.legend
     plt.show()
 
