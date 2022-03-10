@@ -10,7 +10,7 @@ def run():
     temp1=stations_highest_rel_level(stations,5)
     for station in temp1:
        dt=2
-       dates, levels = fetch_measure_levels(station.measure_id, dt=timedelta(days=dt))
+       dates, levels = fetch_measure_levels(station[0].measure_id, dt=timedelta(days=dt))
        plot_water_level_with_fit(station,dates,levels,4)
 
 

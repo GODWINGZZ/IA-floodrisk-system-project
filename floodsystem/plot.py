@@ -15,6 +15,7 @@ def plot_water_level_with_fit(station,dates,levels,p):
         
     plt.plot(k,poly(k),label=f"Best fit, degree {p}",color="red")
     plt.legend
+    plt.show()
 
 
 import matplotlib.pyplot as plt
