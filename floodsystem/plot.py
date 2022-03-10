@@ -1,5 +1,4 @@
 import matplotlib
-from matplotlib.lines import _LineStyle
 from .analyse import polyfit
 import matplotlib.pyplot as plt
 import numpy as np
