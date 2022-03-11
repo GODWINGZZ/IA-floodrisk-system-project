@@ -18,16 +18,16 @@ def run():
     
     print(namelist)
 
-    for i in stations:
-        if i.name in namelist:
+    for station in stations:
+        if station.name in namelist:
             
             dt = 10
-            dates, levels = fetch_measure_levels(i.measure_id, dt=timedelta(days=dt))
+            dates, levels = fetch_measure_levels(station.measure_id, dt=timedelta(days=dt))
 
             for date, level in zip(dates, levels):
                 print(date, level)
 
-            print(plot_water_levels(i, dates, levels))
+            print(plot_water_levels(station, dates, levels))
     
 
     
