@@ -9,7 +9,8 @@ def run():
      temp1=(i[0].name,i[1])
      list.append(temp1)
  for k in range(len(list)):
-     print(list[k][0]+list[k][1])
+     string=str(list[k][1])
+     print(list[k][0]+' '+string)
     
 if __name__ == "__main__":
     print("*** Task 2B: CUED Part IA Flood Warning System ***")
