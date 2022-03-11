@@ -9,7 +9,10 @@ def run():
  for i in stations_highest_rel_level(stations,10):
      temp1=(i[0].name,i[1])
      list.append(temp1)
- print(list)
+ for k in range(len(list)):
+     string=str(list[k][1])
+     print(list[k][0]+' '+string)
+
  
 
 if __name__ == "__main__":
