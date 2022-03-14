@@ -35,26 +35,26 @@ def run():
             elif polyderivative(1) > 0:
 
                 if station.latest_level > station.typical_range[1]:
-                    print(station.name,"severe risk")
+                    print(station.town,"severe risk")
     
                 elif station.latest_level < station.typical_range[1]:
-                    print(station.name,"moderate risk")
+                    print(station.town,"moderate risk")
 
             elif polyderivative(1) < 0:
 
                 if station.latest_level > station.typical_range[1]:
-                    print(station.name,"moderate risk")
+                    print(station.town,"moderate risk")
     
                 elif station.latest_level < station.typical_range[1]:
-                    print(station.name,"low risk")
+                    print(station.town,"low risk")
 
             elif polyderivative(1) == 0:
 
                 if station.latest_level > station.typical_range[1]:
-                    print(station.name,"high risk")
+                    print(station.town,"high risk")
     
                 elif station.latest_level < station.typical_range[1]:
-                    print(station.name,"moderate risk")     
+                    print(station.town,"moderate risk")     
 
 
 if __name__ == "__main__":
