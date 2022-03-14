@@ -15,15 +15,19 @@ def run():
 
     for station in stations:
         towns = []
-        towns.append(station.town)
+        
         if station.town is None:
             towns.append("no_name")
+        if station.town in towns:
+            towns.append("duplicate")
+        else:
+            towns.append(station.town)
     
         for town in towns:
             dt=1
             dates, levels = fetch_measure_levels(station.measure_id, dt=timedelta(days=dt))
 
-            if (len(levels) == 0):      #you're welcome
+            if (len(levels) == 0):    
                 poly = [0]
             else:
                 poly,shift=polyfit(dates,levels,4)    
