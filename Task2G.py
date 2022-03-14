@@ -35,6 +35,7 @@ def run():
 
             if poly == 0 or station.latest_level is None or station.typical_range is None: #test for missing data
                 print("no_data")
+
     
             elif polyderivative(1) > 0:
 
